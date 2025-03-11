@@ -88,12 +88,12 @@ int main() {
     // começo perguntando a primeira carta
     printf("Carta 1\n");
     // Estado (A, B, C, D, F, G ou H)
-    printf("Estado: ");
+    printf("Estado(A a H): ");
     scanf(" %c", &estado);
     // Código (01,02,03 OU 04)
     // Defino um limite de caracteres aserem lidos (%4s --> 4 caracteres de uma array)
     // Não coloco o & na variavel pois a variavel já é um ponteiro (index = 0,1,2,3,...)
-    printf("Codigo: ");
+    printf("Codigo(01 a 04): ");
     scanf(" %4s", codigo);
     // Coloco %[^\n] para na leitura do nome ela considerar os espaco ( ^ = considerar, \n = espaco )
     // ela só quebrara se aperta enter (\n) e não tab
@@ -122,12 +122,12 @@ int main() {
     // começo perguntando a segunda carta
     printf("Carta 2\n");
     // Estado (A, B, C, D, F, G ou H)
-    printf("Estado: ");
+    printf("Estado(A a H): ");
     scanf(" %c", &estado2);
     // Código (01,02,03 OU 04)
     // Defino um limite de caracteres aserem lidos (%4s --> 4 caracteres de uma array)
     // Não coloco o & na variavel pois a variavel já é um ponteiro (index = 0,1,2,3,...)
-    printf("Codigo: ");
+    printf("Codigo(01 a 04): ");
     scanf(" %4s", codigo2);
     // Coloco %[^\n] para na leitura do nome ela considerar os espaco ( ^ = considerar, \n = espaco )
     // ela só quebrara se aperta enter (\n) e não tab
@@ -186,17 +186,18 @@ int main() {
     printf("Populacao: Carta %d venceu (%d)\nArea: Carta %d venceu (%d)\nPIB: Carta %d venceu (%d)\nPontos Turisticos: Carta %d venceu (%d)\nDensidade Populacional: Carta %d venceu (%d)\nPIB per Capita: Carta %d venceu (%d)\nSuper Poder: Carta %d venceu (%d)", comparacaoPopula, comparacaoPopula, comparacaoArea, comparacaoArea, comparacaoPib, comparacaoPib, comparacaoPontosTuris, comparacaoPontosTuris, comparacaoDensidade, comparacaoDensidade, comparacaoPibCapi, comparacaoPibCapi, comparacaoSuperPoder, comparacaoSuperPoder);
 
     printf("\n\n");
+    // comparação com if e else
     printf("***Comparacao das Cartas (Atributo: Pontos Turisticos)***\n\n");
-
+    // se pontosTuristicos for maior de pontosTuristicos2
     if (pontosTuristicos > pontosTuristicos2){
         printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
         printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
         printf("Resultado: Carta 1 (%s) venceu!\n", nome);
-    }else if(pontosTuristicos2> pontosTuristicos){
+    }else if(pontosTuristicos2> pontosTuristicos){  // senão se pontosTuristicos2 for maior de pontosTuristicos
         printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
         printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
         printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
-    }else{
+    }else{ // se pontosTuristicos for igual a pontosTuristicos2
         printf("Ambas as cartas possuem os mesmos valores:\n");
         printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
         printf("Carta 2 - %s : %d\n\n\n", nome2,pontosTuristicos2);
