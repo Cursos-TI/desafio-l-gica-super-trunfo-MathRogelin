@@ -185,6 +185,22 @@ int main() {
 
     printf("Populacao: Carta %d venceu (%d)\nArea: Carta %d venceu (%d)\nPIB: Carta %d venceu (%d)\nPontos Turisticos: Carta %d venceu (%d)\nDensidade Populacional: Carta %d venceu (%d)\nPIB per Capita: Carta %d venceu (%d)\nSuper Poder: Carta %d venceu (%d)", comparacaoPopula, comparacaoPopula, comparacaoArea, comparacaoArea, comparacaoPib, comparacaoPib, comparacaoPontosTuris, comparacaoPontosTuris, comparacaoDensidade, comparacaoDensidade, comparacaoPibCapi, comparacaoPibCapi, comparacaoSuperPoder, comparacaoSuperPoder);
 
+    printf("\n\n");
+    printf("***Comparacao das Cartas (Atributo: Pontos Turisticos)***\n\n");
+
+    if (pontosTuristicos > pontosTuristicos2){
+        printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
+        printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
+        printf("Resultado: Carta 1 (%s) venceu!\n", nome);
+    }else if(pontosTuristicos2> pontosTuristicos){
+        printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
+        printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
+        printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
+    }else{
+        printf("Ambas as cartas possuem os mesmos valores:\n");
+        printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
+        printf("Carta 2 - %s : %d\n\n\n", nome2,pontosTuristicos2);
+    }
 
     return 0;
 }
