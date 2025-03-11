@@ -187,21 +187,40 @@ int main() {
 
     printf("\n\n");
     // comparação com if e else
-    printf("***Comparacao das Cartas (Atributo: Pontos Turisticos)***\n\n");
-    // se pontosTuristicos for maior de pontosTuristicos2
-    if (pontosTuristicos > pontosTuristicos2){
-        printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
-        printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
-        printf("Resultado: Carta 1 (%s) venceu!\n", nome);
-    }else if(pontosTuristicos2> pontosTuristicos){  // senão se pontosTuristicos2 for maior de pontosTuristicos
-        printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
-        printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
-        printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
-    }else{ // se pontosTuristicos for igual a pontosTuristicos2
-        printf("Ambas as cartas possuem os mesmos valores:\n");
-        printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
-        printf("Carta 2 - %s : %d\n\n\n", nome2,pontosTuristicos2);
-    }
+    // variavel para guardar a escolha
+    int escolha;
+    printf("***Comparacao das Cartas***\n\n");
+    printf("Escolha um atributo para comparação digitando o seu número (Exceto os nomes dos paises):\n\n");
+    printf(" 1 - Nome do país (Exibe apenas os nomes)\n");
+    printf(" 2 - Area \n");
+    printf(" 3 - Populacao \n");
+    printf(" 4 - PIB \n");
+    printf(" 5 - Pontos Turisticos \n");
+    printf(" 6 - Densidade Demografica (vence com o menor valor)\n");
 
+    switch (escolha){
+    case 1:
+        /* code */
+        break;
+    case 2:
+        /* code */
+        break;
+    case 3:
+        /* code */
+        break;
+    case 4:
+        /* code */
+        break;
+    case 5:
+        /* code */
+        break;
+    case 6:
+        /* code */
+        break;
+    
+    default:
+        break;
+    }
+ 
     return 0;
 }
