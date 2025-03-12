@@ -114,9 +114,6 @@ int main() {
     // Calculando Densidade Populacional e PIB per Capita para Terceira Carta
     densidadePopulacional = populacao / area;
     pibPerCapital = pib / populacao;
-
-    float superPoder = populacao + area + pib + pontosTuristicos + pibPerCapital - (densidadePopulacional);
-
     // quebro duas linhas
     printf("\n\n");
     // começo perguntando a segunda carta
@@ -148,8 +145,6 @@ int main() {
     // Calculando Densidade Populacional e PIB per Capita para segunda Carta
     densidadePopulacional2 = populacao2 / area2;
     pibPerCapital2 = pib2 / populacao2;
-
-    float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapital2 - (densidadePopulacional2);
     // comparaçoes
     int comparacaoPopula = populacao > populacao2;
     int comparacaoArea = area > area2;

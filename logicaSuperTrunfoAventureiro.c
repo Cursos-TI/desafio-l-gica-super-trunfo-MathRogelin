@@ -80,8 +80,8 @@ int main() {
     */
     int pontosTuristicos,pontosTuristicos2;
 
-    float densidadePopulacional,densidadePopulacional2;
-    float pibPerCapital,pibPerCapital2;
+    long double densidadePopulacional,densidadePopulacional2;
+    long double pibPerCapital,pibPerCapital2;
 
     // quebro duas linhas
     printf("\n\n");
@@ -107,15 +107,13 @@ int main() {
     scanf("%f", &area);
     // Pedi o PIB (aqui considera os numeros com decimais)
     printf("PIB: ");
-    scanf("%f", &pib);
+    scanf("%l", &pib);
     // Pedi o numero de pontos turisticos (um numero inteiro, não considera os decimais)
     printf("Pontos Turisticos: ");
     scanf("%d",&pontosTuristicos);
     // Calculando Densidade Populacional e PIB per Capita para Terceira Carta
     densidadePopulacional = populacao / area;
     pibPerCapital = pib / populacao;
-
-    float superPoder = populacao + area + pib + pontosTuristicos + pibPerCapital - (densidadePopulacional);
 
     // quebro duas linhas
     printf("\n\n");
@@ -141,7 +139,7 @@ int main() {
     scanf("%f", &area2);
     // Pedi o PIB (aqui considera os numeros com decimais)
     printf("PIB: ");
-    scanf("%f", &pib2);
+    scanf("%l", &pib2);
     // Pedi o numero de pontos turisticos (um numero inteiro, não considera os decimais)
     printf("Pontos Turisticos: ");
     scanf("%d",&pontosTuristicos2);
@@ -149,7 +147,6 @@ int main() {
     densidadePopulacional2 = populacao2 / area2;
     pibPerCapital2 = pib2 / populacao2;
 
-    float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapital2 - (densidadePopulacional2);
     // comparaçoes
     int comparacaoPopula = populacao > populacao2;
     int comparacaoArea = area > area2;
@@ -178,14 +175,6 @@ int main() {
     // quebro duas linhas
     printf("\n\n");
     // exibindo comparacao
-    printf("***Comparacoes de Cartas (0 --> Carta 2 venceu)***");
-
-    // quebro duas linhas
-    printf("\n\n");
-
-    printf("Populacao: Carta %d venceu (%d)\nArea: Carta %d venceu (%d)\nPIB: Carta %d venceu (%d)\nPontos Turisticos: Carta %d venceu (%d)\nDensidade Populacional: Carta %d venceu (%d)\nPIB per Capita: Carta %d venceu (%d)\nSuper Poder: Carta %d venceu (%d)", comparacaoPopula, comparacaoPopula, comparacaoArea, comparacaoArea, comparacaoPib, comparacaoPib, comparacaoPontosTuris, comparacaoPontosTuris, comparacaoDensidade, comparacaoDensidade, comparacaoPibCapi, comparacaoPibCapi, comparacaoSuperPoder, comparacaoSuperPoder);
-
-    printf("\n\n");
     // comparação com if e else
     // variavel para guardar a escolha
     int escolha;
@@ -197,25 +186,97 @@ int main() {
     printf(" 4 - PIB \n");
     printf(" 5 - Pontos Turisticos \n");
     printf(" 6 - Densidade Demografica (vence com o menor valor)\n");
+    printf("Digite aqui: ");
+    scanf("%d",&escolha);
 
     switch (escolha){
     case 1:
-        /* code */
+        printf("***Nomes dos paises:***\n\n");
+        printf("Carta 1 - %s \n", nome);
+        printf("Carta 2 - %s \n\n", nome2);
         break;
     case 2:
-        /* code */
+        printf("***Comparacao das Cartas (Atributo: Area)***\n\n");
+        // se area for maior de area2
+        if (area > area2){
+            printf("Carta 1 - %s : %f\n", nome,area);
+            printf("Carta 2 - %s : %f\n", nome2,area2);
+            printf("Resultado: Carta 1 (%s) venceu!\n", nome);
+        }else if(area2 > area){  // senão se pontosTuristicos2 for maior de pontosTuristicos
+            printf("Carta 1 - %s : %d\n", nome,area);
+            printf("Carta 2 - %s : %d\n", nome2,area2);
+            printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
+        }else{ // se pontosTuristicos for igual a pontosTuristicos2
+            printf("Ambas as cartas possuem os mesmos valores:\n");
+            printf("Carta 1 - %s : %d\n", nome,area);
+            printf("Carta 2 - %s : %d\n\n\n", nome2,area2);
+        }
         break;
     case 3:
-        /* code */
+        printf("***Comparacao das Cartas (Atributo: Populacao)***\n\n"); 
+        // se populacao for maior que populacao2
+        if (populacao > populacao2){
+            printf("Carta 1 - %s : %d\n", nome,populacao);
+            printf("Carta 2 - %s : %d\n", nome2,populacao2);
+            printf("Resultado: Carta 1 (%s) venceu!\n", nome);
+        }else if(pontosTuristicos2> pontosTuristicos){  // senão se populacao2 for maior de populucao
+            printf("Carta 1 - %s : %d\n", nome,populacao);
+            printf("Carta 2 - %s : %d\n", nome2,populacao2);
+            printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
+        }else{ // se populacao for igual a populacao2
+            printf("Ambas as cartas possuem os mesmos valores:\n");
+            printf("Carta 1 - %s : %d\n", nome, populacao);
+            printf("Carta 2 - %s : %d\n\n\n", nome2, populacao2);
+        }
         break;
     case 4:
-        /* code */
+        printf("***Comparacao das Cartas (Atributo: PIB)***\n\n");
+        // se pib for maior de pib2
+        if (pib > pib2){
+            printf("Carta 1 - %s : %d\n", nome,pib);
+            printf("Carta 2 - %s : %d\n", nome2,pib2);
+            printf("Resultado: Carta 1 (%s) venceu!\n", nome);
+        }else if(pib2 > pib){  // senão se pib2 for maior de pib
+            printf("Carta 1 - %s : %d\n", nome,pib);
+            printf("Carta 2 - %s : %d\n", nome2,pib2);
+            printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
+        }else{ // se pib for igual a pib2
+            printf("Ambas as cartas possuem os mesmos valores:\n");
+            printf("Carta 1 - %s : %d\n", nome,pib);
+            printf("Carta 2 - %s : %d\n\n\n", nome2,pib2);
+        }
         break;
     case 5:
-        /* code */
+        // se pontosTuristicos for maior de pontosTuristicos2
+        if (pontosTuristicos > pontosTuristicos2){
+            printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
+            printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
+            printf("Resultado: Carta 1 (%s) venceu!\n", nome);
+        }else if(pontosTuristicos2> pontosTuristicos){  // senão se pontosTuristicos2 for maior de pontosTuristicos
+            printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
+            printf("Carta 2 - %s : %d\n", nome2,pontosTuristicos2);
+            printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
+        }else{ // se pontosTuristicos for igual a pontosTuristicos2
+            printf("Ambas as cartas possuem os mesmos valores:\n");
+            printf("Carta 1 - %s : %d\n", nome,pontosTuristicos);
+            printf("Carta 2 - %s : %d\n\n\n", nome2,pontosTuristicos2);
+        }
         break;
     case 6:
-        /* code */
+        // se densidade for menor que densidade2
+        if (densidadePopulacional < densidadePopulacional2){
+            printf("Carta 1 - %s : %d\n", nome,densidadePopulacional);
+            printf("Carta 2 - %s : %d\n", nome2,densidadePopulacional2);
+            printf("Resultado: Carta 1 (%s) venceu!\n", nome);
+        }else if(densidadePopulacional2 < densidadePopulacional){  // senão se densidade2 for menor de densidade
+            printf("Carta 1 - %s : %d\n", nome,densidadePopulacional);
+            printf("Carta 2 - %s : %d\n", nome2,densidadePopulacional2);
+            printf("Resultado: Carta 2 (%s) venceu!\n\n", nome2);
+        }else{ // se pontosTuristicos for igual a pontosTuristicos2
+            printf("Ambas as cartas possuem os mesmos valores:\n");
+            printf("Carta 1 - %s : %d\n", nome,densidadePopulacional);
+            printf("Carta 2 - %s : %d\n\n\n", nome2,densidadePopulacional2);
+        }
         break;
     
     default:
