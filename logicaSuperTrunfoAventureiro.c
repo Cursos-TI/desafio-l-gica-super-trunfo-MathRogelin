@@ -147,15 +147,6 @@ int main() {
     densidadePopulacional2 = populacao2 / area2;
     pibPerCapital2 = pib2 / populacao2;
 
-    // comparaçoes
-    int comparacaoPopula = populacao > populacao2;
-    int comparacaoArea = area > area2;
-    int comparacaoPib = pib > pib2;
-    int comparacaoPibCapi = pibPerCapital > pibPerCapital2;
-    int comparacaoPontosTuris = pontosTuristicos > pontosTuristicos2;
-    int comparacaoDensidade = densidadePopulacional > densidadePopulacional2;
-    int comparacaoSuperPoder = superPoder > superPoder2;
-
     // quebro duas linhas
     printf("\n\n");
 
